@@ -14,10 +14,23 @@
             color: rgb(72, 43, 216);
             margin-left: 40px;
         }
+
+        img {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
     </style>
     <script>
         function myFunction() {
-            document.getElementById("demo").innerHTML = "Paragraph changed.";
+            count = 0;
+            setInterval(function() {
+                count++;
+                document.getElementById("demo").innerHTML = "Paragraph changed." + count;
+
+                document.getElementById("logo").style.right = count + "px"
+                document.getElementById("logo").style.bottom = count + "px"
+            }, 50);
         }
     </script>
 </head>
@@ -32,6 +45,9 @@
         <a href="https://google.com">Click here to learn more</a>
     </p>
 
+    <img id="logo" src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com" width="104"
+                    height="142">
+
     <table>
         <tr>
             <th>First Name</th>
@@ -41,8 +57,7 @@
             <th>Phone</th>
         </tr>
         <tr>
-            <td><img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com" width="104"
-                    height="142"></td>
+            <td>Ayman</td>
             <td>Alzoubi</td>
             <td>20</td>
             <td>Amman</td>
